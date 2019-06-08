@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}TESTS{% endblock %}
+{% block body %}
+    {% if tests %}
+
+        <table class="table table-striped">
+
+            <thead>
+            <tr>
+                <th>Test Title</th>
+                <th>Test</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {% for test in tests %}
+
+                <tr>
+                    <td>{{ test.title }}</td>
+                    <td>
+                        <a href="/tests/{{ test.id }}" class="btn btn-dark">Show </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+    {% else %}
+        <p>no test to display</p>
+    {% endif %}
+{% endblock %}

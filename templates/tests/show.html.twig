@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+	{% block title %} {{ tests.title }} {% endblock %}
+
+	{% block body %}
+
+<table class="table table-striped">
+
+    <tr><b> <h1>{{ tests.title }}</h1> </b></tr>
+
+
+    <tr><h5><pre>{{ tests.code }}</pre></h5></tr>
+
+</table>
+
+        <table class="table table-striped">
+
+
+            <tr>
+                <th>time1</th>
+                <th>time1</th>
+                <th>php_version</th>
+            </tr>
+
+
+
+            {% for result in results %}
+                <tr>
+                    <td><p>{{ result.time1 }}</p></td>
+                    <td><p>{{ result.time2 }}</p></td>
+                    <td><p>{{ result.phpVersion }}</p></td>
+
+                </tr>
+
+            {% endfor %}
+
+
+        </table>
+
+
+
+        <hr>
+        <a href="/">Go back</a>
+    {% endblock %}
